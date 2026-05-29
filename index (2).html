@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Student Result Form</title>
+  </head>
+  <body>
+      <h1>STUDENT RESULT FORM</h1>
+      <br><br>
+      <label>Enter Enrollment Number:</label>
+      <input type = "text"  id = "enroll">
+      <button onclick = "CheckResult()" >Show Result</button>
+      <br><br>
+      
+      <div id="StudentData" style = "display:none;">
+        <h3>Name:NEMALLA PRASANTH</h3>
+        <h3>Roll No:2529290</h3>
+        <h3>Course:B.Tech CSE</h3>
+        <h3>College:Sanskrit University,mathura</h3>
+        <br>
+        <label>Select Semester:</label>
+        <Select onchange = "showResult(this.value)">
+          <option value = "">Select Semester</option>
+          <option value = "sem1">First Semester </option>
+          <option value = "sem2">Second Semester </option>
+          <option value = "sem3">Third Semester </option>
+        </Select>
+          
+       
+      </div>
+      <div id= "sem1" style="display:none;">
+        <h2>1st Semester Result</h2>
+        <table border="1" cellpadding="10">
+          <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+            <th>Grade</th>
+          </tr>
+          <tr>
+            <td>Mathematics</td>
+            <td>96</td>
+            <td>A+</td>
+          </tr>
+          <tr>
+               <td> Object Oriented Programme System</td>
+               <td>78</td>
+               <td>C</td>
+          
+          </tr>
+          <tr>
+            <td>physics</td>
+            <td>75</td>
+            <td>B+</td>
+          </tr>
+          <tr>
+            <td>Chemistry</td>
+            <td>50</td>
+            <td>C</td>
+          </tr>
+        </table>
+        <h3>Total:250</h3>
+        <h3>SGPA:8.9</h3>
+        <h3>Result:PASS</h3>
+        <br>
+        </div>
+        <div id="sem2" style="display:none;">
+          <h2>2nd Semester Result</h2>
+          <table border ="1" cellpadding="10">
+            <tr>
+              <th>Subject</th>
+              <th>Marks</th>
+              <th>Grade</th>
+            </tr>
+            <tr>
+              <td>Environmental Science</td>
+              <td>96</td>
+              <td>A+</td>
+              
+            </tr>
+            <tr>
+              <td>Chemistry</td>
+              <td>89</td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td>Communication Skills</td>
+              <td>75</td>
+              <td>C</td>
+            </tr>
+            
+          </table>
+          <h3>Total:600</h3>
+          <h3>SGPA:7.86</h3>
+          <h3>Result:PASS</h3>
+        </div>
+        
+        <div id = "sem3" style="display:none;">
+          <h2>3rd Semester Result</h2>
+          <table border = "1" cellpadding="10">
+            <tr>
+              <th>Subject</th>
+              <th>Marks</th>
+              <th>Grade</th>
+            </tr>
+            <tr>
+              <td>Python</td>
+              <td>85</td>
+              <td>B</td>
+            </tr>
+            <tr>
+              <td>Chemistry</td>
+              <td>56</td>
+              <td>C</td>
+            </tr>
+            <tr>
+              <td>HTMl</td>
+              <td>96</td>
+              <td>A+</td>
+            </tr>
+          </table>
+          <h3>Total:625</h3>
+          <h3>SGPA:7.26</h3>
+          <h3>Result:PASS</h3>
+        </div>
+        
+        
+        
+        <script>
+        function CheckResult()
+        {
+        var enrollNumber = document.getElementById("enroll").value;
+        if(enrollNumber=="2529290") {
+          document.getElementById("StudentData").style.display="block";
+        }else{
+          alert("Invalid enrollment Number");
+          
+        }
+        }
+        function showResult(value)
+        {
+          document.getElementById("sem1").style.display="none";
+          document.getElementById("sem2").style.display="none";
+          document.getElementById("sem3").style.display="none";
+           
+           if(value!==" ") 
+           {
+             document.getElementById(value).style.display="block";
+           }
+        }
+      </script>
+      
+  </body>
+</html>
